@@ -1,7 +1,8 @@
 <p>home works!</p>
 
-<ul>
-    <li *ngFor="let user of listofthings">{{user.firstName +" " + user.lastName}}</li>
-</ul>
 
-<div *ngIf='name=="Deepak"'>{{name}} </div>
+<app-card *ngFor="let user of listofthings" [designation]="user.designation" [firstname]="user.firstName" [lastname]="user.lastName"> </app-card>
+
+
+<!-- <div *ngIf='name=="Deepak"'>{{name}} </div> -->
+

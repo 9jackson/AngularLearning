@@ -1,35 +1,56 @@
 import { Component, OnInit } from '@angular/core';
+import { UsersService } from 'src/app/services/users.service';
 import { User } from './home.model';
 
 @Component({
   selector: 'app-home',
   templateUrl: './home.component.html',
-  styleUrls: ['./home.component.css']
+  styleUrls: ['./home.component.css'],
+  providers: [UsersService]
 })
 export class HomeComponent  implements OnInit {
 
   name:string='Deepak';
-  listofthings: Array<User>= [
-    {
-      firstName: "Deepak",
-      lastName: "George"
-    },
-    {
-      firstName: "Lijoy",
-      lastName: "George"
-    }
-   ];
+
+  // listofthingsstatic: Array<User>= [
+  //   {
+  //     firstName: "Deepak",
+  //     lastName: "George",
+  //     designation:"student"
+  //   },
+  //   {
+  //     firstName: "Lijoy",
+  //     lastName: "George"
+  //   }
+  //  ];
+
+   listofthings : User[]=[];
+
+   constructor(private userService: UsersService) {
+    
+  }
+
+  getUsers(): void{
+  this.userService.getUsers()
+  .subscribe(data => (this.listofthings=data)
+       
+    );
+  }
 
   ngOnInit(): void {
     // throw new Error('Method not implemented.');
-    setTimeout(() => {
-      this.name="Lijoy";
-      console.log("Changing Name " + this.name );
-    }, 3000);
+    // setTimeout(() => {
+    //   this.name="Lijoy";
+    //   console.log("Changing Name " + this.name );
+    // }, 3000);
 
-    console.log("Hello " + this.name );
+    this.getUsers();
+    console.log(this.listofthings);
+
+    console.log("Hello " + this.name + " I am in ngOnInit" );
   }
 
+ 
   
 
 }
