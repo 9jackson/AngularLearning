@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { BannersService } from 'src/app/services/banners.service';
 import { UsersService } from 'src/app/services/users.service';
 import { User } from './home.model';
 
@@ -6,7 +7,8 @@ import { User } from './home.model';
   selector: 'app-home',
   templateUrl: './home.component.html',
   styleUrls: ['./home.component.css'],
-  providers: [UsersService]
+  providers: [UsersService, BannersService]
+  
 })
 export class HomeComponent  implements OnInit {
 

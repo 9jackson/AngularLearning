@@ -1,0 +1,9 @@
+<p>banner works!</p>
+<ul *ngFor="let banner of bannerdata" >
+<li>{{banner.headline + " -  "+ banner.caption}}
+
+
+</li>
+<img [src]="banner.bgImgURL"> 
+</ul>
+

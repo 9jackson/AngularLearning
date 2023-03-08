@@ -10,6 +10,8 @@ import { FooterComponent } from './components/footer/footer.component';
 import { HeaderComponent } from './components/header/header.component';
 import { HeaderModule } from './components/header/header.module';
 import { HomeModule } from './components/home/home.module';
+import { BannerComponent } from './components/banner/banner.component';
+import { BannersService } from './services/banners.service';
 
 
 
@@ -19,7 +21,7 @@ import { HomeModule } from './components/home/home.module';
   declarations: [
     AppComponent,
     HeaderComponent,
-    FooterComponent
+    FooterComponent,BannerComponent
    
   ],
   imports: [
@@ -29,7 +31,7 @@ import { HomeModule } from './components/home/home.module';
     HttpClientModule
     // HeaderModule
   ],
-  providers: [],
+    providers:[BannersService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

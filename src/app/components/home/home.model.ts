@@ -3,3 +3,4 @@ export interface User{
     lastName?:string,
     designation?:string
 }
+
