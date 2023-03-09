@@ -2,11 +2,12 @@ import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Observable, throwError } from 'rxjs';
 import { User } from '../components/home/home.model';
+import { HomeModule } from '../components/home/home.module';
 
 
 
 @Injectable({
-  providedIn: 'root'//HomeModule
+  providedIn: 'root' //'root'//HomeModule
 })
 export class UsersService {
 

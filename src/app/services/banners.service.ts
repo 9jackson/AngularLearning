@@ -1,7 +1,8 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
-import { Banner } from '../components/banner/banner.model';
+import { Banner } from '../components/home/home.model';
+
 
 
 @Injectable({

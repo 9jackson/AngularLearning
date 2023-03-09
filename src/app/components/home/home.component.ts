@@ -32,13 +32,7 @@ export class HomeComponent  implements OnInit {
     
   }
 
-  getUsers(): void{
-  this.userService.getUsers()
-  .subscribe(data => (this.listofthings=data)
-       
-    );
-  }
-
+ 
   ngOnInit(): void {
     // throw new Error('Method not implemented.');
     // setTimeout(() => {
@@ -52,7 +46,13 @@ export class HomeComponent  implements OnInit {
     console.log("Hello " + this.name + " I am in ngOnInit" );
   }
 
- 
+  getUsers(): void{
+    this.userService.getUsers()
+    .subscribe(data => (this.listofthings=data)
+         
+      );
+    }
+  
   
 
 }
