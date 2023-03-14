@@ -12,6 +12,7 @@ import { HeaderModule } from './components/header/header.module';
 import { HomeModule } from './components/home/home.module';
 import { BannerComponent } from './components/banner/banner.component';
 import { BannersService } from './services/banners.service';
+import { LoginComponent } from './auth/login/login.component';
 
 
 
@@ -21,7 +22,7 @@ import { BannersService } from './services/banners.service';
   declarations: [
     AppComponent,
     HeaderComponent,
-    FooterComponent,BannerComponent
+    FooterComponent,BannerComponent, LoginComponent
    
   ],
   imports: [
