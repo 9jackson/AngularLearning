@@ -23,3 +23,5 @@ getUsers(): Observable<User[]>
 }
 
 }
+
+//Interceptors are used to modify request or response.

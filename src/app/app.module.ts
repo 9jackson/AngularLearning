@@ -1,6 +1,6 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
-import { HttpClientModule } from '@angular/common/http';
+import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -13,6 +13,7 @@ import { HomeModule } from './components/home/home.module';
 import { BannerComponent } from './components/banner/banner.component';
 import { BannersService } from './services/banners.service';
 import { LoginComponent } from './auth/login/login.component';
+import { AuthenticationInterceptor } from './authentication.interceptor';
 
 
 
@@ -32,7 +33,11 @@ import { LoginComponent } from './auth/login/login.component';
     HttpClientModule
     // HeaderModule
   ],
-    providers:[BannersService],
+    providers:[BannersService,
+      { 
+        provide: HTTP_INTERCEPTORS, useClass: AuthenticationInterceptor, multi:true
+      }
+    ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

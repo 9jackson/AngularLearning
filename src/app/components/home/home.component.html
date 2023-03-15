@@ -1,7 +1,9 @@
 <p>home works!</p>
 
 
-<app-card *ngFor="let user of listofthings" [designation]="user.designation" [firstname]="user.firstName" [lastname]="user.lastName"> </app-card>
+<app-card *ngFor="let user of listofthings" [designation1]="user.designation" [firstname1]="user.firstName" [lastname1]="user.lastName"
+(sendUser)="getUser($event)"
+> </app-card>
 
 
 <!-- <div *ngIf='name=="Deepak"'>{{name}} </div> -->

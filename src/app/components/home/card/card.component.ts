@@ -1,4 +1,5 @@
-import { Component, Input } from '@angular/core';
+import { Component, EventEmitter, Input, Output } from '@angular/core';
+import { User } from '../home.model';
 
 @Component({
   selector: 'app-card',
@@ -6,9 +7,25 @@ import { Component, Input } from '@angular/core';
   styleUrls: ['./card.component.css']
 })
 export class CardComponent {
-  @Input() firstname='';
-  @Input()  lastname ?='' ;
-  @Input() designation ?='';
+  @Input() firstname1='';
+  @Input()  lastname1 ?='' ;
+  @Input() designation1 ?='';
+  @Output() sendUser=new EventEmitter();
+
+  viewUser()
+  {
+    //new Object implements User()
+    const user: User={
+      firstName: this.firstname1,
+      lastName: this.lastname1
+
+    };
+    this.sendUser.emit(user);
+      
+      //this.firstname1);
+  }
+    
+  }
 
 
-}
+

@@ -7,8 +7,8 @@ const routes: Routes = [
   {
      path: '',
     // children:['home']
-    component: HomeComponent,
-    canActivate: [authGuard]
+    component: HomeComponent
+    //    canActivate: [authGuard]
   }
 ];
 

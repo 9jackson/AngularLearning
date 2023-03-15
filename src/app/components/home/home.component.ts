@@ -14,6 +14,8 @@ export class HomeComponent  implements OnInit {
 
   name:string='Deepak';
 
+  
+
   // listofthingsstatic: Array<User>= [
   //   {
   //     firstName: "Deepak",
@@ -32,6 +34,7 @@ export class HomeComponent  implements OnInit {
     
   }
 
+  
  
   ngOnInit(): void {
     // throw new Error('Method not implemented.');
@@ -53,6 +56,10 @@ export class HomeComponent  implements OnInit {
       );
     }
   
+    getUser(user:User){
+      alert(user.lastName);
+    }
   
+    // functionname(param1:paramdatatype,param2:paramdatatype) : function return value datatype { statements return value} 
 
 }
