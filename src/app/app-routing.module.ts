@@ -4,12 +4,20 @@ import { authGuard } from './auth/auth.guard';
 import { HomeComponent } from './components/home/home.component';
 
 const routes: Routes = [
+
   {
-     path: '',
+    path:'',redirectTo:'',pathMatch:'full'
+  },
+  {
+
+    //Lazy Loading
+     path: 'home',
+     loadChildren: ()=> import ('./components/home/home.module').then (m=>m.HomeModule)
     // children:['home']
-    component: HomeComponent
+    
     //    canActivate: [authGuard]
   }
+ 
 ];
 
 @NgModule({

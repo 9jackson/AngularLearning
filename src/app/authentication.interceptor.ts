@@ -21,9 +21,10 @@ export class AuthenticationInterceptor implements HttpInterceptor {
     {
       const headers = request.headers.delete(InterceptorSkipHeader);
       return next.handle(request.clone({ headers }));
-     // return next.handle(request.clone());
+      //return next.handle(request);
    
     }
+    //return next.handle(request.clone());
     return next.handle(request.clone({ setHeaders: { authorization: `Bearer ${'TestingJWT'}`  }} ))
     
   }

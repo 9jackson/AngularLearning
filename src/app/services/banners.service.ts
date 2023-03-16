@@ -6,7 +6,7 @@ import { Banner } from '../components/home/home.model';
 
 
 @Injectable({
-  providedIn: 'root'
+  providedIn: 'root' // any or module name
 })
 export class BannersService {
 
@@ -17,17 +17,21 @@ export class BannersService {
 getTopBannerItems(): Observable<Banner[]>
 {
   const InterceptorSkipHeader = 'X-Skip-Interceptor';
-   // const localoptionHeaders=new HttpHeaders();
+    let localoptionHeaders=new HttpHeaders();
    
-    //localoptionHeaders.set(InterceptorSkipHeader,'skip');
+   // localoptionHeaders.set('Authorization','skip');
+    //localoptionHeaders.set('Authorization','skip2');
+     localoptionHeaders.set('InterceptorSkipHeader','skip');
+    // localoptionHeaders.append('InterceptorSkipHeader','skip2');
     //If we change value from headers in constant it will not work
-   const headers = new HttpHeaders().set(InterceptorSkipHeader, 'skip');
+   //const headers1 = new HttpHeaders().set(InterceptorSkipHeader, 'skip');
   // localoptionHeaders.append('Content-Type','application/json');
   //const headers = { SkipInterceptor: 'skip' }
   //  ,{options:localoptionHeaders}
-  console.log(headers);
+  console.log(localoptionHeaders);
   return this.http.get<Banner[]>("http://localhost:3000/banner"
-  , {headers:headers}
+  , {headers:localoptionHeaders}
+  
  
 
   )

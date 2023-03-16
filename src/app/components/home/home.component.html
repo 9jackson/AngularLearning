@@ -4,7 +4,9 @@
 <app-card *ngFor="let user of listofthings" [designation1]="user.designation" [firstname1]="user.firstName" [lastname1]="user.lastName"
 (sendUser)="getUser($event)"
 > </app-card>
+<a routerLink="./room"> Room</a>
 
+<router-outlet></router-outlet>
 
 <!-- <div *ngIf='name=="Deepak"'>{{name}} </div> -->
 
